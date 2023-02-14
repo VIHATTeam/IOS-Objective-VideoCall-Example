@@ -6,8 +6,9 @@
 //
 
 #import "ViewController.h"
+#import "SampleVideoCallViewController.h"
+
 #import <OmiKit/OmiClient.h>
-#import <OmiKit/OMIVideoCallViewController.h>
 #import <OmiKit/OMIVideoViewManager.h>
 #import <OmiKit/OMIVideoPreviewView.h>
 #import <AVFoundation/AVFoundation.h>
@@ -38,7 +39,7 @@ NSString * PASS_WORD2 = @"Kunkun12345";
 - (IBAction)makeCall:(UIButton *)sender {
     [OmiClient startVideoCall:self.callPhoneNumberTextField.text];
 
-    OMIVideoCallViewController *viewController = [[OMIVideoCallViewController alloc] init];
+    SampleVideoCallViewController *viewController = [[SampleVideoCallViewController alloc] init];
     viewController.modalPresentationStyle = UIModalPresentationFullScreen;
     [self presentViewController:viewController animated:YES completion:^{
 //        [OmiClient startCall:self.callPhoneNumberTextField.text];
@@ -72,7 +73,7 @@ NSString * PASS_WORD2 = @"Kunkun12345";
         NSLog(@"viewcontroller ===>>> %ld", call.callState);
         if (call.callState == OMICallStateConfirmed && !self.presentedViewController) {
         
-            OMIVideoCallViewController *viewController = [[OMIVideoCallViewController alloc] init];
+            SampleVideoCallViewController *viewController = [[SampleVideoCallViewController alloc] init];
             viewController.modalPresentationStyle = UIModalPresentationFullScreen;
             [weakSelf presentViewController:viewController animated:YES completion:^{
         //        [OmiClient startCall:self.callPhoneNumberTextField.text];
