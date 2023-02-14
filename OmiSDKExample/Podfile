@@ -1,0 +1,8 @@
+platform :ios, '14.0'
+
+target 'OmiSDKExample' do
+     pod 'OmiKit'
+end
+
+
+

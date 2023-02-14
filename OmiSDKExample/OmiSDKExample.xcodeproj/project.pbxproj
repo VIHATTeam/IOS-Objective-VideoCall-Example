@@ -1,0 +1,457 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		731FC3CE299B812700DD3A25 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 731FC3CD299B812700DD3A25 /* AppDelegate.m */; };
+		731FC3D1299B812700DD3A25 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 731FC3D0299B812700DD3A25 /* SceneDelegate.m */; };
+		731FC3D4299B812700DD3A25 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 731FC3D3299B812700DD3A25 /* ViewController.m */; };
+		731FC3D7299B812700DD3A25 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 731FC3D5299B812700DD3A25 /* Main.storyboard */; };
+		731FC3DA299B812700DD3A25 /* OmiSDKExample.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 731FC3D8299B812700DD3A25 /* OmiSDKExample.xcdatamodeld */; };
+		731FC3DC299B812800DD3A25 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 731FC3DB299B812800DD3A25 /* Assets.xcassets */; };
+		731FC3DF299B812800DD3A25 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 731FC3DD299B812800DD3A25 /* LaunchScreen.storyboard */; };
+		731FC3E2299B812800DD3A25 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 731FC3E1299B812800DD3A25 /* main.m */; };
+		C99C9F963C932382FC3A338F /* libPods-OmiSDKExample.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 03629A5E3D63508CD693822D /* libPods-OmiSDKExample.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		03629A5E3D63508CD693822D /* libPods-OmiSDKExample.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-OmiSDKExample.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		076D89E0899C2E13E5A11A57 /* Pods-OmiSDKExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OmiSDKExample.release.xcconfig"; path = "Target Support Files/Pods-OmiSDKExample/Pods-OmiSDKExample.release.xcconfig"; sourceTree = "<group>"; };
+		26AE2D9A2F1B4173BFC68AEE /* Pods-OmiSDKExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OmiSDKExample.debug.xcconfig"; path = "Target Support Files/Pods-OmiSDKExample/Pods-OmiSDKExample.debug.xcconfig"; sourceTree = "<group>"; };
+		731FC3C9299B812700DD3A25 /* OmiSDKExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OmiSDKExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		731FC3CC299B812700DD3A25 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		731FC3CD299B812700DD3A25 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		731FC3CF299B812700DD3A25 /* SceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
+		731FC3D0299B812700DD3A25 /* SceneDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
+		731FC3D2299B812700DD3A25 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		731FC3D3299B812700DD3A25 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		731FC3D6299B812700DD3A25 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		731FC3D9299B812700DD3A25 /* OmiSDKExample.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = OmiSDKExample.xcdatamodel; sourceTree = "<group>"; };
+		731FC3DB299B812800DD3A25 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		731FC3DE299B812800DD3A25 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		731FC3E0299B812800DD3A25 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		731FC3E1299B812800DD3A25 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		731FC3E8299B884D00DD3A25 /* OmiSDKExample.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = OmiSDKExample.entitlements; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		731FC3C6299B812700DD3A25 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C99C9F963C932382FC3A338F /* libPods-OmiSDKExample.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		731FC3C0299B812700DD3A25 = {
+			isa = PBXGroup;
+			children = (
+				731FC3CB299B812700DD3A25 /* OmiSDKExample */,
+				731FC3CA299B812700DD3A25 /* Products */,
+				E481865C045DC9EEDDED9A43 /* Pods */,
+				A2D1625B80D2D346036C5EED /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		731FC3CA299B812700DD3A25 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				731FC3C9299B812700DD3A25 /* OmiSDKExample.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		731FC3CB299B812700DD3A25 /* OmiSDKExample */ = {
+			isa = PBXGroup;
+			children = (
+				731FC3E8299B884D00DD3A25 /* OmiSDKExample.entitlements */,
+				731FC3CC299B812700DD3A25 /* AppDelegate.h */,
+				731FC3CD299B812700DD3A25 /* AppDelegate.m */,
+				731FC3CF299B812700DD3A25 /* SceneDelegate.h */,
+				731FC3D0299B812700DD3A25 /* SceneDelegate.m */,
+				731FC3D2299B812700DD3A25 /* ViewController.h */,
+				731FC3D3299B812700DD3A25 /* ViewController.m */,
+				731FC3D5299B812700DD3A25 /* Main.storyboard */,
+				731FC3DB299B812800DD3A25 /* Assets.xcassets */,
+				731FC3DD299B812800DD3A25 /* LaunchScreen.storyboard */,
+				731FC3E0299B812800DD3A25 /* Info.plist */,
+				731FC3E1299B812800DD3A25 /* main.m */,
+				731FC3D8299B812700DD3A25 /* OmiSDKExample.xcdatamodeld */,
+			);
+			path = OmiSDKExample;
+			sourceTree = "<group>";
+		};
+		A2D1625B80D2D346036C5EED /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				03629A5E3D63508CD693822D /* libPods-OmiSDKExample.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E481865C045DC9EEDDED9A43 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				26AE2D9A2F1B4173BFC68AEE /* Pods-OmiSDKExample.debug.xcconfig */,
+				076D89E0899C2E13E5A11A57 /* Pods-OmiSDKExample.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		731FC3C8299B812700DD3A25 /* OmiSDKExample */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 731FC3E5299B812800DD3A25 /* Build configuration list for PBXNativeTarget "OmiSDKExample" */;
+			buildPhases = (
+				B48657EF6BF6E223A39D32FD /* [CP] Check Pods Manifest.lock */,
+				731FC3C5299B812700DD3A25 /* Sources */,
+				731FC3C6299B812700DD3A25 /* Frameworks */,
+				731FC3C7299B812700DD3A25 /* Resources */,
+				09550E9C828FF476E5F08FC7 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = OmiSDKExample;
+			productName = OmiSDKExample;
+			productReference = 731FC3C9299B812700DD3A25 /* OmiSDKExample.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		731FC3C1299B812700DD3A25 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastUpgradeCheck = 1400;
+				TargetAttributes = {
+					731FC3C8299B812700DD3A25 = {
+						CreatedOnToolsVersion = 14.0.1;
+					};
+				};
+			};
+			buildConfigurationList = 731FC3C4299B812700DD3A25 /* Build configuration list for PBXProject "OmiSDKExample" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 731FC3C0299B812700DD3A25;
+			productRefGroup = 731FC3CA299B812700DD3A25 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				731FC3C8299B812700DD3A25 /* OmiSDKExample */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		731FC3C7299B812700DD3A25 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				731FC3DF299B812800DD3A25 /* LaunchScreen.storyboard in Resources */,
+				731FC3DC299B812800DD3A25 /* Assets.xcassets in Resources */,
+				731FC3D7299B812700DD3A25 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		09550E9C828FF476E5F08FC7 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-OmiSDKExample/Pods-OmiSDKExample-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-OmiSDKExample/Pods-OmiSDKExample-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-OmiSDKExample/Pods-OmiSDKExample-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B48657EF6BF6E223A39D32FD /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-OmiSDKExample-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		731FC3C5299B812700DD3A25 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				731FC3E2299B812800DD3A25 /* main.m in Sources */,
+				731FC3D4299B812700DD3A25 /* ViewController.m in Sources */,
+				731FC3DA299B812700DD3A25 /* OmiSDKExample.xcdatamodeld in Sources */,
+				731FC3CE299B812700DD3A25 /* AppDelegate.m in Sources */,
+				731FC3D1299B812700DD3A25 /* SceneDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		731FC3D5299B812700DD3A25 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				731FC3D6299B812700DD3A25 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		731FC3DD299B812800DD3A25 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				731FC3DE299B812800DD3A25 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		731FC3E3299B812800DD3A25 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		731FC3E4299B812800DD3A25 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		731FC3E6299B812800DD3A25 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 26AE2D9A2F1B4173BFC68AEE /* Pods-OmiSDKExample.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = OmiSDKExample/OmiSDKExample.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = ZD8A96Y6GA;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = OmiSDKExample/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = vn.vihat.omikit;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		731FC3E7299B812800DD3A25 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 076D89E0899C2E13E5A11A57 /* Pods-OmiSDKExample.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = OmiSDKExample/OmiSDKExample.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = ZD8A96Y6GA;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = OmiSDKExample/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = vn.vihat.omikit;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		731FC3C4299B812700DD3A25 /* Build configuration list for PBXProject "OmiSDKExample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				731FC3E3299B812800DD3A25 /* Debug */,
+				731FC3E4299B812800DD3A25 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		731FC3E5299B812800DD3A25 /* Build configuration list for PBXNativeTarget "OmiSDKExample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				731FC3E6299B812800DD3A25 /* Debug */,
+				731FC3E7299B812800DD3A25 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		731FC3D8299B812700DD3A25 /* OmiSDKExample.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				731FC3D9299B812700DD3A25 /* OmiSDKExample.xcdatamodel */,
+			);
+			currentVersion = 731FC3D9299B812700DD3A25 /* OmiSDKExample.xcdatamodel */;
+			path = OmiSDKExample.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 731FC3C1299B812700DD3A25 /* Project object */;
+}
