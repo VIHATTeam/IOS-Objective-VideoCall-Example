@@ -36,7 +36,7 @@ NSString * PASS_WORD2 = @"Kunkun12345";
 
 
 - (IBAction)makeCall:(UIButton *)sender {
-    [OmiClient startCall:self.callPhoneNumberTextField.text];
+    [OmiClient startVideoCall:self.callPhoneNumberTextField.text];
 
     OMIVideoCallViewController *viewController = [[OMIVideoCallViewController alloc] init];
     viewController.modalPresentationStyle = UIModalPresentationFullScreen;
