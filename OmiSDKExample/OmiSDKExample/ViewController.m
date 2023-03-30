@@ -35,21 +35,39 @@ NSString * PASS_WORD2 = @"Kunkun12345";
     // Do any additional setup after loading the view.
 }
 
+- (IBAction)makeVideoCall:(id)sender {
+    __weak typeof(self)weakSelf = self;
+    BOOL result = [OmiClient startVideoCall:_callPhoneNumberTextField.text];
+    if(result){
+        dispatch_async(dispatch_get_main_queue(), ^{
+            SampleVideoCallViewController *viewController = [[SampleVideoCallViewController alloc] init];
+            viewController.modalPresentationStyle = UIModalPresentationFullScreen;
+            [weakSelf presentViewController:viewController animated:YES completion:^{
+            }];
+            
+        });
+    }
 
-- (IBAction)makeCall:(UIButton *)sender {
-    [OmiClient startVideoCall:self.callPhoneNumberTextField.text];
-
-    SampleVideoCallViewController *viewController = [[SampleVideoCallViewController alloc] init];
-    viewController.modalPresentationStyle = UIModalPresentationFullScreen;
-    [self presentViewController:viewController animated:YES completion:^{
-//        [OmiClient startCall:self.callPhoneNumberTextField.text];
-    }];
 }
 
-- (IBAction)EndCall:(id)sender {
-    OMICall *call = [OmiClient getFirstActiveCall];
-    [[[OMISIPLib sharedInstance] callManager] endAllCalls];
+- (IBAction)makeCall:(id)sender {
+    __weak typeof(self)weakSelf = self;
+
+
+    BOOL result = [OmiClient startCall:_callPhoneNumberTextField.text];
+    if(result){
+        dispatch_async(dispatch_get_main_queue(), ^{
+            SampleVideoCallViewController *viewController = [[SampleVideoCallViewController alloc] init];
+            viewController.modalPresentationStyle = UIModalPresentationFullScreen;
+            [weakSelf presentViewController:viewController animated:YES completion:^{
+            }];
+            
+        });
+    }
+
+
 }
+
 
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -69,15 +87,47 @@ NSString * PASS_WORD2 = @"Kunkun12345";
     
     __weak typeof(self)weakSelf = self;
     dispatch_async(dispatch_get_main_queue(), ^{
-        OMICall *call = [OmiClient getFirstActiveCall];
-        NSLog(@"viewcontroller ===>>> %ld", call.callState);
-        if (call.callState == OMICallStateConfirmed && !self.presentedViewController) {
-        
-            SampleVideoCallViewController *viewController = [[SampleVideoCallViewController alloc] init];
-            viewController.modalPresentationStyle = UIModalPresentationFullScreen;
-            [weakSelf presentViewController:viewController animated:YES completion:^{
-        //        [OmiClient startCall:self.callPhoneNumberTextField.text];
-            }];
+        __weak OMICall *call = [[notification userInfo] objectForKey:OMINotificationUserInfoCallKey];
+        switch(call.callState)
+        {
+            case OMICallStateEarly:
+                NSLog(@"callStateChanged OMICallStateEarly : %@",call.uuid.UUIDString);
+                break;
+            case OMICallStateCalling:
+                NSLog(@"callStateChanged OMICallStateCalling : %@",call.uuid.UUIDString);
+                break;
+            case OMICallStateIncoming:{
+                NSLog(@"callStateChanged OMICallStateIncoming : %@",call.uuid.UUIDString);
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    SampleVideoCallViewController *viewController = [[SampleVideoCallViewController alloc] init];
+                    viewController.modalPresentationStyle = UIModalPresentationFullScreen;
+                    [weakSelf presentViewController:viewController animated:YES completion:^{
+                    }];
+                    
+                });
+
+                break;
+            }
+            case OMICallStateConnecting:
+                NSLog(@"callStateChanged OMICallStateConnecting : %@",call.uuid.UUIDString);
+                break;
+            case OMICallStateConfirmed:{
+                NSLog(@"callStateChanged OMICallStateConfirmed : %@",call.uuid.UUIDString);
+               
+                break;
+            }
+            case OMICallStateDisconnected:
+                NSLog(@"callStateChanged OMICallStateDisconnected : %@",call.uuid.UUIDString);
+                break;
+            case OMICallStateMuted:
+                NSLog(@"callStateChanged OMICallStateMuted : %@",call.uuid.UUIDString);
+                break;
+            case OMICallStateHold:
+                NSLog(@"callStateChanged OMICallStateHold : %@",call.uuid.UUIDString);
+                break;
+            case OMICallStateNull:
+                NSLog(@"callStateChanged OMICallStateNull : %@",call.uuid.UUIDString);
+                break;
         }
     });
 }
@@ -87,23 +137,17 @@ NSString * PASS_WORD2 = @"Kunkun12345";
 - (IBAction)login100:(id)sender {
 
     [OmiClient initWithUsername:USER_NAME1 password:PASS_WORD1 realm:@"dky"];
-    [OmiClient startOmiService:true];// true if call video
-    [OmiClient registerAccount];
     self.myNumberLabel.text = [NSString stringWithFormat:@"My number:%@", USER_NAME1];
     self.callPhoneNumberTextField.text = USER_NAME2;
-    self.videoManager = [[OMIVideoViewManager alloc] init];
 
 }
 
 - (IBAction)login101:(id)sender {
 
     [OmiClient initWithUsername:USER_NAME2 password:PASS_WORD2 realm:@"dky"];
-    [OmiClient startOmiService:true];// true if call video
-    [OmiClient registerAccount];
 
     self.myNumberLabel.text = [NSString stringWithFormat:@"My number:%@", USER_NAME2];
     self.callPhoneNumberTextField.text = USER_NAME1;
-    self.videoManager = [[OMIVideoViewManager alloc] init];
 
 }
 
@@ -112,7 +156,7 @@ NSString * PASS_WORD2 = @"Kunkun12345";
 }
 
 - (IBAction)toggleMic:(UIButton *)sender {
-    OMICall *call = [OmiClient getFirstActiveCall];
+    OMICall *call = [OmiClient getCurrentConfirmCall];
     if (call) {
         [call toggleMute:NULL];
     }
