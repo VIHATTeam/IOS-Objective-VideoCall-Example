@@ -1,7 +1,7 @@
 platform :ios, '14.0'
 
 target 'OmiSDKExample' do
-     pod 'OmiKit'
+	pod 'OmiKit', :git => 'https://github.com/VIHATTeam/OmiKit.git'
 end
 
 

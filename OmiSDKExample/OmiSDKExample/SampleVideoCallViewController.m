@@ -18,8 +18,8 @@
 
 @property (nonatomic, strong) OMIVideoViewManager *videoManager;
 
-@property (nonatomic, strong) OMIVideoPreviewView *localView;
-@property (nonatomic, strong) OMIVideoPreviewView *remoteView;
+@property (nonatomic, strong) OMIVideoPreviewView *remoteVideoRenderView;
+@property (nonatomic, strong) OMIVideoPreviewView *localVideoRenderView;
 
 @property (nonatomic, strong) UIButton *backButton;
 
@@ -30,27 +30,19 @@
 @property (nonatomic, strong) UIButton *endCallButton;
 
 @property (nonatomic, strong) UIButton *moreButton;
-@property (nonatomic, strong) OMICall * currentCall;
+@property (nonatomic) CGSize originalSize;
 
 
 @end
 
 @implementation SampleVideoCallViewController
 
--(id)initWithCall:(OMICall *)call
-{
-    if(self = [super init]) {
-        _currentCall = call;
-        // Do something with params
-    }
-
-    return self;
-}
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self setUpView];
-
+    NSLog(@"log: %@",[[OmiClient getListOutputDevices] description]);
+    _originalSize = (CGSize){100, 100};
+    
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(callStateChanged:)
                                                  name:OMICallStateChangedNotification
@@ -59,7 +51,30 @@
                                              selector:@selector(callDealloc:)
                                                  name:OMICallDeallocNotification
                                                object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(calculateRenderRemoteVideo:) name:OMINotificationUserInfoVideoSizeRenderKey object:nil];
+
     
+}
+
+
+/**
+ *  This function got notification when receive signal video from remote side
+ *  We need call function to re-render view
+ */
+-(void) calculateRenderRemoteVideo:(NSNotification *) noti {
+    NSLog(@"Video noti: %@", [noti description]);
+    NSDictionary *dic = [noti userInfo];
+    CGSize size = [[dic valueForKey:OMINotificationUserInfoWindowSizeKey] CGSizeValue];
+    if(size.width != _originalSize.width && size.height != _originalSize.height){
+        NSLog(@"Video noti: %@", [noti description]);
+        _originalSize = size;
+        if(size.width > 0){// if size > 0 is need to re-render
+            dispatch_async(dispatch_get_main_queue(), ^{
+                self.remoteVideoRenderView.contentMode = UIViewContentModeScaleAspectFill;
+                [self.remoteVideoRenderView setView:[self.videoManager createViewForVideoRemote:self.remoteVideoRenderView.frame]];
+            });
+        }
+    }
 }
 
 -(void)setUpView{
@@ -91,9 +106,9 @@
         /**
          autolayout subviews below.
          */
-        self.localView = [[OMIVideoPreviewView alloc] init];
-        [self.view insertSubview: self.localView atIndex:0];
-        [self.localView mas_makeConstraints:^(MASConstraintMaker *make) {
+        self.remoteVideoRenderView = [[OMIVideoPreviewView alloc] init];
+        [self.view insertSubview: self.remoteVideoRenderView atIndex:0];
+        [self.remoteVideoRenderView mas_makeConstraints:^(MASConstraintMaker *make) {
             make.top.left.right.bottom.equalTo(self.view);
         }];
         
@@ -113,18 +128,18 @@
         /**
          *  remote video
          */
-        self.remoteView = [[OMIVideoPreviewView alloc] init];
-        self.remoteView.backgroundColor = [UIColor blackColor];
-        [self.view addSubview:self.remoteView];
-        [self.remoteView mas_makeConstraints:^(MASConstraintMaker *make) {
+        self.localVideoRenderView = [[OMIVideoPreviewView alloc] init];
+        self.localVideoRenderView.backgroundColor = [UIColor blackColor];
+        [self.view addSubview:self.localVideoRenderView];
+        [self.localVideoRenderView mas_makeConstraints:^(MASConstraintMaker *make) {
             make.right.equalTo(self.view).inset(14);
             make.width.height.equalTo(self.view).multipliedBy(0.3);
             make.top.equalTo(self.switchCameraButton.mas_bottom).offset(14);
         }];
-        self.remoteView.layer.cornerRadius = 5;
-        self.remoteView.layer.borderColor = [UIColor grayColor].CGColor;
-        self.remoteView.layer.borderWidth = 1.0;
-        self.remoteView.layer.masksToBounds = YES;
+        self.localVideoRenderView.layer.cornerRadius = 5;
+        self.localVideoRenderView.layer.borderColor = [UIColor grayColor].CGColor;
+        self.localVideoRenderView.layer.borderWidth = 1.0;
+        self.localVideoRenderView.layer.masksToBounds = YES;
     }
 
     
@@ -173,10 +188,6 @@
     [super viewDidAppear:animated];
     
     // If current call state is already OMICallStateConfirmed, try to start preview videos.
-    if (_currentCall.isVideo) {
-//        [self startPreview];
-    }
-    
     // observe Call state change notification
 
 }
@@ -192,11 +203,8 @@
 /// User 1 show this view controller before the call established. So observe this notification to start preview video at right time.
 /// - Parameter notification: notification
 - (void)callStateChanged: (NSNotification *)notification {
-    __weak OMICall *call = [[notification userInfo] objectForKey:OMINotificationUserInfoCallKey];
+    __weak  OMICall *call = [[notification userInfo] objectForKey:OMINotificationUserInfoCallKey];
     if (call && call.callState == OMICallStateConfirmed && call.isVideo) {
-        _currentCall = [[OMISIPLib sharedInstance] getCurrentConfirmCall];
-        if(_currentCall == nil) return;
-
         [self startPreview];
     }else if(call && call.callState == OMICallStateDisconnected) {
         dispatch_async(dispatch_get_main_queue(), ^{
@@ -215,17 +223,16 @@
 
 - (void)startPreview {
     __weak typeof(self) weakSelf = self;
-    if(!_localView || !_remoteView) return;
+    if(!_remoteVideoRenderView || !_localVideoRenderView) return;
     
         dispatch_async(dispatch_get_main_queue(), ^{
-            weakSelf.remoteView.contentMode = UIViewContentModeScaleAspectFill;
-            [weakSelf.remoteView setView:[self.videoManager createPreviewViewWith:weakSelf.remoteView.frame]];
-
+            weakSelf.localVideoRenderView.contentMode = UIViewContentModeScaleAspectFill;
+            [weakSelf.localVideoRenderView setView:[self.videoManager createViewForVideoLocal:weakSelf.localVideoRenderView.frame]];
         });
     
         dispatch_async(dispatch_get_main_queue(), ^{
-            weakSelf.localView.contentMode = UIViewContentModeScaleAspectFill;
-            [weakSelf.localView setView:[self.videoManager createVideoWindowWithFrame:weakSelf.localView.frame]];
+            weakSelf.remoteVideoRenderView.contentMode = UIViewContentModeScaleAspectFill;
+            [weakSelf.remoteVideoRenderView setView:[self.videoManager createViewForVideoRemote:weakSelf.remoteVideoRenderView.frame]];
 
         });
 }
@@ -248,6 +255,8 @@
 
 - (void)micOnOff {
     [[OMISIPLib.sharedInstance getCurrentConfirmCall] toggleMute:NULL];
+
+
     __weak typeof(self) weakSelf = self;
     dispatch_async(dispatch_get_main_queue(), ^{
         BOOL muted = [OMISIPLib.sharedInstance getCurrentConfirmCall] .muted;
