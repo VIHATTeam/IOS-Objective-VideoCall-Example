@@ -24,10 +24,10 @@
 @end
 
 @implementation ViewController
-NSString * USER_NAME1 = @"100";
-NSString * PASS_WORD1 = @"Kunkun";
-NSString * USER_NAME2 = @"101";
-NSString * PASS_WORD2 = @"Kunkun12345";
+NSString * USER_NAME1 = @"xxx";
+NSString * PASS_WORD1 = @"xxx";
+NSString * USER_NAME2 = @"xxx";
+NSString * PASS_WORD2 = @"xxx";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -136,7 +136,7 @@ NSString * PASS_WORD2 = @"Kunkun12345";
 
 - (IBAction)login100:(id)sender {
 
-    [OmiClient initWithUsername:USER_NAME1 password:PASS_WORD1 realm:@"dky"];
+//    [OmiClient initWithUsername:USER_NAME1 password:PASS_WORD1 realm:@"dky"];
     self.myNumberLabel.text = [NSString stringWithFormat:@"My number:%@", USER_NAME1];
     self.callPhoneNumberTextField.text = USER_NAME2;
 
@@ -144,7 +144,7 @@ NSString * PASS_WORD2 = @"Kunkun12345";
 
 - (IBAction)login101:(id)sender {
 
-    [OmiClient initWithUsername:USER_NAME2 password:PASS_WORD2 realm:@"dky"];
+//    [OmiClient initWithUsername:USER_NAME2 password:PASS_WORD2 realm:@"dky"];
 
     self.myNumberLabel.text = [NSString stringWithFormat:@"My number:%@", USER_NAME2];
     self.callPhoneNumberTextField.text = USER_NAME1;
