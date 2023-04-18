@@ -4,11 +4,22 @@
 //
 //  Created by VietHQ on 2022/11/14.
 //
-
+/**
+ The Flow:
+ - show view , init component need for call ( Exept Video call component )
+ - receive event Call confirm to start process if it video call :
+    - Start init Camera View
+    - Start Stream for Video View
+ - Receive event durring call for update View:
+    - Event OMICallNetworkQualityNotification about network Stats: ( Good/Medium/Bad )
+    - Event OMICallStateChangedNotification for call status ( Disconnected/ Confirmed .. )
+    - Listen OMICallVideoInfoNotification event about Video call update and need re-create view
+ */
 #import "SampleVideoCallViewController.h"
 #import <OmiKit/OMIVideoViewManager.h>
 #import <OmiKit/OMIVideoPreviewView.h>
 #import <OmiKit/OmiClient.h>
+#import <OmiKit/OMILogging.h>
 
 #import <AVFoundation/AVFoundation.h>
 #import "Masonry/Masonry.h"
@@ -28,9 +39,11 @@
 @property (nonatomic, strong) UIButton *cameraOnButton;
 @property (nonatomic, strong) UIButton *micButton;
 @property (nonatomic, strong) UIButton *endCallButton;
-
+ 
 @property (nonatomic, strong) UIButton *moreButton;
+@property (nonatomic, strong) UIImageView *networkStatus;
 @property (nonatomic) CGSize originalSize;
+@property (nonatomic) NSArray *viewArray;
 
 
 @end
@@ -40,7 +53,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self setUpView];
-    NSLog(@"log: %@",[[OmiClient getListOutputDevices] description]);
+    OMILogDebug(@"log: %@",[[OmiClient getListOutputDevices] description]);
     _originalSize = (CGSize){100, 100};
     
     [[NSNotificationCenter defaultCenter] addObserver:self
@@ -51,9 +64,29 @@
                                              selector:@selector(callDealloc:)
                                                  name:OMICallDeallocNotification
                                                object:nil];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(calculateRenderRemoteVideo:) name:OMINotificationUserInfoVideoSizeRenderKey object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(videoNotification:) name:OMICallVideoInfoNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateNetworkHealth:) name:OMICallNetworkQualityNotification object:nil];
 
     
+}
+
+-(void) updateNetworkHealth:(NSNotification *) noti {
+    NSDictionary *dic = [noti userInfo];
+    NSNumber * state = [dic valueForKey:OMINotificationNetworkStatusKey];
+    switch([state intValue]){
+        case OMINetworkGood:{
+            [self.networkStatus setImage: [UIImage imageNamed: @"network_best"]];
+            break;
+        }
+        case OMINetworkMedium:{
+            [self.networkStatus setImage: [UIImage imageNamed: @"network_medium"]];
+            break;
+        }
+        case OMINetworkBad:{
+            [self.networkStatus setImage: [UIImage imageNamed: @"network_bad"]];
+            break;
+        }
+    }
 }
 
 
@@ -61,18 +94,13 @@
  *  This function got notification when receive signal video from remote side
  *  We need call function to re-render view
  */
--(void) calculateRenderRemoteVideo:(NSNotification *) noti {
-    NSLog(@"Video noti: %@", [noti description]);
+-(void) videoNotification:(NSNotification *) noti {
     NSDictionary *dic = [noti userInfo];
-    CGSize size = [[dic valueForKey:OMINotificationUserInfoWindowSizeKey] CGSizeValue];
-    if(size.width != _originalSize.width && size.height != _originalSize.height){
-        NSLog(@"Video noti: %@", [noti description]);
-        _originalSize = size;
-        if(size.width > 0){// if size > 0 is need to re-render
-            dispatch_async(dispatch_get_main_queue(), ^{
-                self.remoteVideoRenderView.contentMode = UIViewContentModeScaleAspectFill;
-                [self.remoteVideoRenderView setView:[self.videoManager createViewForVideoRemote:self.remoteVideoRenderView.frame]];
-            });
+    NSNumber * state = [dic valueForKey:OMIVideoInfoState];
+    switch([state intValue]){
+        case OMIVideoRemoteReady:{
+            [self startPreview];
+            break;
         }
     }
 }
@@ -96,11 +124,53 @@
         make.width.height.equalTo(@(32));
     }];
     
+    self.networkStatus = [[UIImageView alloc] init];
+    [self.networkStatus setImage: [UIImage imageNamed: @"network_best"]];
+    self.networkStatus.contentMode = UIViewContentModeScaleAspectFit;
+    
+    [self.view addSubview:self.networkStatus];
+    [self.networkStatus mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerX;
+        make.top.equalTo(self.mas_topLayoutGuide).inset(18);
+        make.width.height.equalTo(@(18));
+    }];
+    
     [self.backButton setImage:[self imageNamed:@"back"] forState:UIControlStateNormal];
     [self.backButton addTarget:self action:@selector(back) forControlEvents:UIControlEventTouchUpInside];
     
 
     // remote view
+    // mic on/off
+    self.micButton = [[UIButton alloc] init];
+    [self.view addSubview:self.micButton];
+    [self.micButton setImage:[self imageNamed:@"mic"] forState:UIControlStateNormal];
+    [self.micButton addTarget:self action:@selector(micOnOff) forControlEvents:UIControlEventTouchUpInside];
+    
+    // hang up
+    self.endCallButton = [[UIButton alloc] init];
+    [self.view addSubview:self.endCallButton];
+    [self.endCallButton setImage:[self imageNamed:@"hangup"] forState:UIControlStateNormal];
+    [self.endCallButton addTarget:self action:@selector(hangup) forControlEvents:UIControlEventTouchUpInside];
+
+    // more
+    self.moreButton = [[UIButton alloc] init];
+    [self.view addSubview:self.moreButton];
+    [self.moreButton setImage:[self imageNamed:@"more"] forState:UIControlStateNormal];
+    [self.moreButton addTarget:self action:@selector(more) forControlEvents:UIControlEventTouchUpInside];
+
+   
+   
+    self.viewArray = @[self.micButton,  self.endCallButton, self.moreButton];
+    
+    [self.viewArray mas_distributeViewsAlongAxis:MASAxisTypeHorizontal withFixedItemLength:64 leadSpacing:24 tailSpacing:24];
+    [self.viewArray mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.bottom.equalTo(self.view.mas_bottom).inset(32);
+        make.height.equalTo(@(64));
+    }];
+
+}
+
+-(void) updateScreenUIForVideoCall {
     if([OMIEndpoint sharedEndpoint].isSupportVideo){
         
         /**
@@ -136,57 +206,35 @@
             make.width.height.equalTo(self.view).multipliedBy(0.3);
             make.top.equalTo(self.switchCameraButton.mas_bottom).offset(14);
         }];
+       
         self.localVideoRenderView.layer.cornerRadius = 5;
         self.localVideoRenderView.layer.borderColor = [UIColor grayColor].CGColor;
         self.localVideoRenderView.layer.borderWidth = 1.0;
         self.localVideoRenderView.layer.masksToBounds = YES;
-    }
-
-    
-    // camera on/off
-    if([OMIEndpoint sharedEndpoint].isSupportVideo){
+   
         self.cameraOnButton = [[UIButton alloc] init];
         [self.view addSubview:self.cameraOnButton];
         [self.cameraOnButton setImage:[self imageNamed:@"video"] forState:UIControlStateNormal];
         [self.cameraOnButton addTarget:self action:@selector(cameraOnOff) forControlEvents:UIControlEventTouchUpInside];
-    }
-    // mic on/off
-    self.micButton = [[UIButton alloc] init];
-    [self.view addSubview:self.micButton];
-    [self.micButton setImage:[self imageNamed:@"mic"] forState:UIControlStateNormal];
-    [self.micButton addTarget:self action:@selector(micOnOff) forControlEvents:UIControlEventTouchUpInside];
     
-    // hang up
-    self.endCallButton = [[UIButton alloc] init];
-    [self.view addSubview:self.endCallButton];
-    [self.endCallButton setImage:[self imageNamed:@"hangup"] forState:UIControlStateNormal];
-    [self.endCallButton addTarget:self action:@selector(hangup) forControlEvents:UIControlEventTouchUpInside];
-
-    // more
-    self.moreButton = [[UIButton alloc] init];
-    [self.view addSubview:self.moreButton];
-    [self.moreButton setImage:[self imageNamed:@"more"] forState:UIControlStateNormal];
-    [self.moreButton addTarget:self action:@selector(more) forControlEvents:UIControlEventTouchUpInside];
-
-    NSArray *viewArray = nil;
-    if([OMIEndpoint sharedEndpoint].isSupportVideo){
-        viewArray = @[self.micButton,self.cameraOnButton,  self.endCallButton, self.moreButton];
-    }
-    else {
-        viewArray = @[self.micButton,  self.endCallButton, self.moreButton];
-    }
+        self.viewArray = @[self.micButton,self.cameraOnButton,  self.endCallButton, self.moreButton];
+    
         
-    [viewArray mas_distributeViewsAlongAxis:MASAxisTypeHorizontal withFixedItemLength:64 leadSpacing:24 tailSpacing:24];
-    [viewArray mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.bottom.equalTo(self.view.mas_bottom).inset(32);
-        make.height.equalTo(@(64));
-    }];
-
+        [self.viewArray mas_distributeViewsAlongAxis:MASAxisTypeHorizontal withFixedItemLength:64 leadSpacing:24 tailSpacing:24];
+        [self.viewArray mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.bottom.equalTo(self.view.mas_bottom).inset(32);
+            make.height.equalTo(@(64));
+        }];
+    }
+   
 }
+
+
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
-    
+    __weak typeof(self) weakSelf = self;
+
     // If current call state is already OMICallStateConfirmed, try to start preview videos.
     // observe Call state change notification
 
@@ -205,10 +253,12 @@
 - (void)callStateChanged: (NSNotification *)notification {
     __weak  OMICall *call = [[notification userInfo] objectForKey:OMINotificationUserInfoCallKey];
     if (call && call.callState == OMICallStateConfirmed && call.isVideo) {
-        [self startPreview];
-    }else if(call && call.callState == OMICallStateDisconnected) {
         dispatch_async(dispatch_get_main_queue(), ^{
-            [self dismissViewControllerAnimated:YES completion:nil];
+            [self updateScreenUIForVideoCall];
+        });
+    } else if(call && call.callState == OMICallStateDisconnected) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+                [self dismissViewControllerAnimated:YES completion:nil];
         });
     }
 }
@@ -217,7 +267,7 @@
 /// - Parameter notification: Call End Notification
 - (void)callDealloc: (NSNotification *)notification {
     dispatch_async(dispatch_get_main_queue(), ^{
-        [self dismissViewControllerAnimated:YES completion:nil];
+            [self dismissViewControllerAnimated:YES completion:nil];
     });
 }
 
@@ -226,14 +276,10 @@
     if(!_remoteVideoRenderView || !_localVideoRenderView) return;
     
         dispatch_async(dispatch_get_main_queue(), ^{
-            weakSelf.localVideoRenderView.contentMode = UIViewContentModeScaleAspectFill;
-            [weakSelf.localVideoRenderView setView:[self.videoManager createViewForVideoLocal:weakSelf.localVideoRenderView.frame]];
-        });
-    
-        dispatch_async(dispatch_get_main_queue(), ^{
             weakSelf.remoteVideoRenderView.contentMode = UIViewContentModeScaleAspectFill;
             [weakSelf.remoteVideoRenderView setView:[self.videoManager createViewForVideoRemote:weakSelf.remoteVideoRenderView.frame]];
-
+            weakSelf.localVideoRenderView.contentMode = UIViewContentModeScaleAspectFill;
+            [weakSelf.localVideoRenderView setView:[self.videoManager createViewForVideoLocal:weakSelf.localVideoRenderView.frame]];
         });
 }
 
@@ -254,14 +300,17 @@
 }
 
 - (void)micOnOff {
-    [[OMISIPLib.sharedInstance getCurrentConfirmCall] toggleMute:NULL];
-
-
-    __weak typeof(self) weakSelf = self;
-    dispatch_async(dispatch_get_main_queue(), ^{
-        BOOL muted = [OMISIPLib.sharedInstance getCurrentConfirmCall] .muted;
-        [weakSelf.micButton setImage:[weakSelf imageNamed:muted ? @"mic-off" : @"mic"] forState:UIControlStateNormal];
-    });
+    
+    __weak OMICall * call = [OMISIPLib.sharedInstance getCurrentConfirmCall];
+    if(call){
+        [call toggleMute:NULL];
+        __weak typeof(self) weakSelf = self;
+        dispatch_async(dispatch_get_main_queue(), ^{
+            BOOL muted = [OMISIPLib.sharedInstance getCurrentConfirmCall] .muted;
+            [weakSelf.micButton setImage:[weakSelf imageNamed:muted ? @"mic-off" : @"mic"] forState:UIControlStateNormal];
+        });
+    }
+  
 }
 
 - (void)hangup {

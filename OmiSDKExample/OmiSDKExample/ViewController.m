@@ -24,10 +24,10 @@
 @end
 
 @implementation ViewController
-NSString * USER_NAME1 = @"xxx";
-NSString * PASS_WORD1 = @"xxx";
-NSString * USER_NAME2 = @"xxx";
-NSString * PASS_WORD2 = @"xxx";
+NSString * USER_NAME1 = @"xx";
+NSString * PASS_WORD1 = @"xx@@";
+NSString * USER_NAME2 = @"xx";
+NSString * PASS_WORD2 = @"xx@@";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
