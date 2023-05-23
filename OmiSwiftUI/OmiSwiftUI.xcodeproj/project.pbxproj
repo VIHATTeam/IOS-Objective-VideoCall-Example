@@ -1,0 +1,444 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		C89D1EE42A1CB3EC00DFAFEB /* OmiSwiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C89D1EE32A1CB3EC00DFAFEB /* OmiSwiftUIApp.swift */; };
+		C89D1EE82A1CB3EE00DFAFEB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C89D1EE72A1CB3EE00DFAFEB /* Assets.xcassets */; };
+		C89D1EEB2A1CB3EE00DFAFEB /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C89D1EEA2A1CB3EE00DFAFEB /* Preview Assets.xcassets */; };
+		C89D1EF42A1CC7FC00DFAFEB /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C89D1EF32A1CC7FC00DFAFEB /* HomeView.swift */; };
+		C89D1EF62A1CCC6900DFAFEB /* AudioCallView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C89D1EF52A1CCC6900DFAFEB /* AudioCallView.swift */; };
+		C89D1EF82A1CCC7200DFAFEB /* VideoCallView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C89D1EF72A1CCC7200DFAFEB /* VideoCallView.swift */; };
+		C89D1EFA2A1CCE1E00DFAFEB /* CustomViewDidLoad.swift in Sources */ = {isa = PBXBuildFile; fileRef = C89D1EF92A1CCE1E00DFAFEB /* CustomViewDidLoad.swift */; };
+		E62C7E408750C9F150F115D2 /* Pods_OmiSwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89A693EE3B9050AA23D4819F /* Pods_OmiSwiftUI.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		05E7B52551FA67C065537782 /* Pods-OmiSwiftUI.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OmiSwiftUI.release.xcconfig"; path = "Target Support Files/Pods-OmiSwiftUI/Pods-OmiSwiftUI.release.xcconfig"; sourceTree = "<group>"; };
+		89A693EE3B9050AA23D4819F /* Pods_OmiSwiftUI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OmiSwiftUI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BF71E403ECD0884C62569BAC /* Pods-OmiSwiftUI.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OmiSwiftUI.debug.xcconfig"; path = "Target Support Files/Pods-OmiSwiftUI/Pods-OmiSwiftUI.debug.xcconfig"; sourceTree = "<group>"; };
+		C89D1EE02A1CB3EC00DFAFEB /* OmiSwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OmiSwiftUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C89D1EE32A1CB3EC00DFAFEB /* OmiSwiftUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OmiSwiftUIApp.swift; sourceTree = "<group>"; };
+		C89D1EE72A1CB3EE00DFAFEB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		C89D1EEA2A1CB3EE00DFAFEB /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		C89D1EF12A1CC77F00DFAFEB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		C89D1EF22A1CC78300DFAFEB /* OmiSwiftUI.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = OmiSwiftUI.entitlements; sourceTree = "<group>"; };
+		C89D1EF32A1CC7FC00DFAFEB /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		C89D1EF52A1CCC6900DFAFEB /* AudioCallView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioCallView.swift; sourceTree = "<group>"; };
+		C89D1EF72A1CCC7200DFAFEB /* VideoCallView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoCallView.swift; sourceTree = "<group>"; };
+		C89D1EF92A1CCE1E00DFAFEB /* CustomViewDidLoad.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomViewDidLoad.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C89D1EDD2A1CB3EC00DFAFEB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E62C7E408750C9F150F115D2 /* Pods_OmiSwiftUI.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0D256CBD7C499CAF4722E796 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				BF71E403ECD0884C62569BAC /* Pods-OmiSwiftUI.debug.xcconfig */,
+				05E7B52551FA67C065537782 /* Pods-OmiSwiftUI.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		C89D1ED72A1CB3EC00DFAFEB = {
+			isa = PBXGroup;
+			children = (
+				C89D1EE22A1CB3EC00DFAFEB /* OmiSwiftUI */,
+				C89D1EE12A1CB3EC00DFAFEB /* Products */,
+				0D256CBD7C499CAF4722E796 /* Pods */,
+				E09BF80292493DEEAFCE5307 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		C89D1EE12A1CB3EC00DFAFEB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C89D1EE02A1CB3EC00DFAFEB /* OmiSwiftUI.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C89D1EE22A1CB3EC00DFAFEB /* OmiSwiftUI */ = {
+			isa = PBXGroup;
+			children = (
+				C89D1EF22A1CC78300DFAFEB /* OmiSwiftUI.entitlements */,
+				C89D1EF12A1CC77F00DFAFEB /* Info.plist */,
+				C89D1EE32A1CB3EC00DFAFEB /* OmiSwiftUIApp.swift */,
+				C89D1EE72A1CB3EE00DFAFEB /* Assets.xcassets */,
+				C89D1EE92A1CB3EE00DFAFEB /* Preview Content */,
+				C89D1EF32A1CC7FC00DFAFEB /* HomeView.swift */,
+				C89D1EF52A1CCC6900DFAFEB /* AudioCallView.swift */,
+				C89D1EF72A1CCC7200DFAFEB /* VideoCallView.swift */,
+				C89D1EF92A1CCE1E00DFAFEB /* CustomViewDidLoad.swift */,
+			);
+			path = OmiSwiftUI;
+			sourceTree = "<group>";
+		};
+		C89D1EE92A1CB3EE00DFAFEB /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				C89D1EEA2A1CB3EE00DFAFEB /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		E09BF80292493DEEAFCE5307 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				89A693EE3B9050AA23D4819F /* Pods_OmiSwiftUI.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		C89D1EDF2A1CB3EC00DFAFEB /* OmiSwiftUI */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C89D1EEE2A1CB3EE00DFAFEB /* Build configuration list for PBXNativeTarget "OmiSwiftUI" */;
+			buildPhases = (
+				18303B1BB4017834224D1684 /* [CP] Check Pods Manifest.lock */,
+				C89D1EDC2A1CB3EC00DFAFEB /* Sources */,
+				C89D1EDD2A1CB3EC00DFAFEB /* Frameworks */,
+				C89D1EDE2A1CB3EC00DFAFEB /* Resources */,
+				131D170BB41B9782136A1B13 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = OmiSwiftUI;
+			productName = OmiSwiftUI;
+			productReference = C89D1EE02A1CB3EC00DFAFEB /* OmiSwiftUI.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C89D1ED82A1CB3EC00DFAFEB /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1420;
+				LastUpgradeCheck = 1420;
+				TargetAttributes = {
+					C89D1EDF2A1CB3EC00DFAFEB = {
+						CreatedOnToolsVersion = 14.2;
+					};
+				};
+			};
+			buildConfigurationList = C89D1EDB2A1CB3EC00DFAFEB /* Build configuration list for PBXProject "OmiSwiftUI" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = C89D1ED72A1CB3EC00DFAFEB;
+			productRefGroup = C89D1EE12A1CB3EC00DFAFEB /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C89D1EDF2A1CB3EC00DFAFEB /* OmiSwiftUI */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		C89D1EDE2A1CB3EC00DFAFEB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C89D1EEB2A1CB3EE00DFAFEB /* Preview Assets.xcassets in Resources */,
+				C89D1EE82A1CB3EE00DFAFEB /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		131D170BB41B9782136A1B13 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-OmiSwiftUI/Pods-OmiSwiftUI-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-OmiSwiftUI/Pods-OmiSwiftUI-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-OmiSwiftUI/Pods-OmiSwiftUI-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		18303B1BB4017834224D1684 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-OmiSwiftUI-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C89D1EDC2A1CB3EC00DFAFEB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C89D1EFA2A1CCE1E00DFAFEB /* CustomViewDidLoad.swift in Sources */,
+				C89D1EF82A1CCC7200DFAFEB /* VideoCallView.swift in Sources */,
+				C89D1EF62A1CCC6900DFAFEB /* AudioCallView.swift in Sources */,
+				C89D1EF42A1CC7FC00DFAFEB /* HomeView.swift in Sources */,
+				C89D1EE42A1CB3EC00DFAFEB /* OmiSwiftUIApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		C89D1EEC2A1CB3EE00DFAFEB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		C89D1EED2A1CB3EE00DFAFEB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		C89D1EEF2A1CB3EE00DFAFEB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BF71E403ECD0884C62569BAC /* Pods-OmiSwiftUI.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = OmiSwiftUI/OmiSwiftUI.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"OmiSwiftUI/Preview Content\"";
+				DEVELOPMENT_TEAM = "";
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = ZD8A96Y6GA;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = OmiSwiftUI/Info.plist;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = vn.vihat.omikit;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = Developer_vn.vihat.omikit;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		C89D1EF02A1CB3EE00DFAFEB /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 05E7B52551FA67C065537782 /* Pods-OmiSwiftUI.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = OmiSwiftUI/OmiSwiftUI.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"OmiSwiftUI/Preview Content\"";
+				DEVELOPMENT_TEAM = "";
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = ZD8A96Y6GA;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = OmiSwiftUI/Info.plist;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = vn.vihat.omikit;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = Developer_vn.vihat.omikit;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C89D1EDB2A1CB3EC00DFAFEB /* Build configuration list for PBXProject "OmiSwiftUI" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C89D1EEC2A1CB3EE00DFAFEB /* Debug */,
+				C89D1EED2A1CB3EE00DFAFEB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C89D1EEE2A1CB3EE00DFAFEB /* Build configuration list for PBXNativeTarget "OmiSwiftUI" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C89D1EEF2A1CB3EE00DFAFEB /* Debug */,
+				C89D1EF02A1CB3EE00DFAFEB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = C89D1ED82A1CB3EC00DFAFEB /* Project object */;
+}
