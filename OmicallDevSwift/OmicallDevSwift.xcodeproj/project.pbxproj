@@ -1,0 +1,491 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A066B0AE0C6FA06F9F051E84 /* Pods_OmicallDevSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CD5028D3AF81BA3B1B0333B /* Pods_OmicallDevSwift.framework */; };
+		C89D1ECD2A1C750B00DFAFEB /* VideoCallViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C89D1ECB2A1C750B00DFAFEB /* VideoCallViewController.swift */; };
+		C89D1ECE2A1C750B00DFAFEB /* VideoCallViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C89D1ECC2A1C750B00DFAFEB /* VideoCallViewController.xib */; };
+		C89D1ED52A1C9EBE00DFAFEB /* AudioCallViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C89D1ED32A1C9EBE00DFAFEB /* AudioCallViewController.swift */; };
+		C89D1ED62A1C9EBE00DFAFEB /* AudioCallViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C89D1ED42A1C9EBE00DFAFEB /* AudioCallViewController.xib */; };
+		C8F1A4322A15E4B000D3B479 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8F1A4312A15E4B000D3B479 /* AppDelegate.swift */; };
+		C8F1A4392A15E4B000D3B479 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C8F1A4372A15E4B000D3B479 /* Main.storyboard */; };
+		C8F1A43B2A15E4B100D3B479 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C8F1A43A2A15E4B100D3B479 /* Assets.xcassets */; };
+		C8F1A43E2A15E4B200D3B479 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C8F1A43C2A15E4B200D3B479 /* LaunchScreen.storyboard */; };
+		C8F1A4462A160F0000D3B479 /* AppRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8F1A4452A160F0000D3B479 /* AppRouter.swift */; };
+		C8F1A4492A160F2B00D3B479 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8F1A4472A160F2B00D3B479 /* HomeViewController.swift */; };
+		C8F1A44A2A160F2B00D3B479 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C8F1A4482A160F2B00D3B479 /* HomeViewController.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		033B817320F838EDDBE4E06E /* Pods-OmicallDevSwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OmicallDevSwift.release.xcconfig"; path = "Target Support Files/Pods-OmicallDevSwift/Pods-OmicallDevSwift.release.xcconfig"; sourceTree = "<group>"; };
+		2CD5028D3AF81BA3B1B0333B /* Pods_OmicallDevSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OmicallDevSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		77BF2137D9A05D7E22D5896F /* Pods-OmicallDevSwift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OmicallDevSwift.debug.xcconfig"; path = "Target Support Files/Pods-OmicallDevSwift/Pods-OmicallDevSwift.debug.xcconfig"; sourceTree = "<group>"; };
+		C89D1ECB2A1C750B00DFAFEB /* VideoCallViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoCallViewController.swift; sourceTree = "<group>"; };
+		C89D1ECC2A1C750B00DFAFEB /* VideoCallViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VideoCallViewController.xib; sourceTree = "<group>"; };
+		C89D1ED32A1C9EBE00DFAFEB /* AudioCallViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioCallViewController.swift; sourceTree = "<group>"; };
+		C89D1ED42A1C9EBE00DFAFEB /* AudioCallViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AudioCallViewController.xib; sourceTree = "<group>"; };
+		C8F1A42E2A15E4B000D3B479 /* OmicallDevSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OmicallDevSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C8F1A4312A15E4B000D3B479 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		C8F1A4382A15E4B000D3B479 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		C8F1A43A2A15E4B100D3B479 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		C8F1A43D2A15E4B200D3B479 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		C8F1A43F2A15E4B200D3B479 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C8F1A4452A160F0000D3B479 /* AppRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRouter.swift; sourceTree = "<group>"; };
+		C8F1A4472A160F2B00D3B479 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		C8F1A4482A160F2B00D3B479 /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
+		C8F1A44C2A16100900D3B479 /* OmicallDevSwift.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = OmicallDevSwift.entitlements; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C8F1A42B2A15E4B000D3B479 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A066B0AE0C6FA06F9F051E84 /* Pods_OmicallDevSwift.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		8B28F86F23A9D3C635DE2EE7 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				77BF2137D9A05D7E22D5896F /* Pods-OmicallDevSwift.debug.xcconfig */,
+				033B817320F838EDDBE4E06E /* Pods-OmicallDevSwift.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		C8F1A4252A15E4B000D3B479 = {
+			isa = PBXGroup;
+			children = (
+				C8F1A4302A15E4B000D3B479 /* OmicallDevSwift */,
+				C8F1A42F2A15E4B000D3B479 /* Products */,
+				8B28F86F23A9D3C635DE2EE7 /* Pods */,
+				DB4659A1B2BBB31258C5A657 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		C8F1A42F2A15E4B000D3B479 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C8F1A42E2A15E4B000D3B479 /* OmicallDevSwift.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C8F1A4302A15E4B000D3B479 /* OmicallDevSwift */ = {
+			isa = PBXGroup;
+			children = (
+				C8F1A44C2A16100900D3B479 /* OmicallDevSwift.entitlements */,
+				C8F1A44B2A160F3000D3B479 /* Features */,
+				C8F1A4312A15E4B000D3B479 /* AppDelegate.swift */,
+				C8F1A4372A15E4B000D3B479 /* Main.storyboard */,
+				C8F1A43A2A15E4B100D3B479 /* Assets.xcassets */,
+				C8F1A43C2A15E4B200D3B479 /* LaunchScreen.storyboard */,
+				C8F1A43F2A15E4B200D3B479 /* Info.plist */,
+				C8F1A4452A160F0000D3B479 /* AppRouter.swift */,
+			);
+			path = OmicallDevSwift;
+			sourceTree = "<group>";
+		};
+		C8F1A44B2A160F3000D3B479 /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				C8F1A4472A160F2B00D3B479 /* HomeViewController.swift */,
+				C8F1A4482A160F2B00D3B479 /* HomeViewController.xib */,
+				C89D1ECB2A1C750B00DFAFEB /* VideoCallViewController.swift */,
+				C89D1ECC2A1C750B00DFAFEB /* VideoCallViewController.xib */,
+				C89D1ED32A1C9EBE00DFAFEB /* AudioCallViewController.swift */,
+				C89D1ED42A1C9EBE00DFAFEB /* AudioCallViewController.xib */,
+			);
+			path = Features;
+			sourceTree = "<group>";
+		};
+		DB4659A1B2BBB31258C5A657 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2CD5028D3AF81BA3B1B0333B /* Pods_OmicallDevSwift.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		C8F1A42D2A15E4B000D3B479 /* OmicallDevSwift */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C8F1A4422A15E4B200D3B479 /* Build configuration list for PBXNativeTarget "OmicallDevSwift" */;
+			buildPhases = (
+				647F57DE618CAA36DD8ADCC6 /* [CP] Check Pods Manifest.lock */,
+				C8F1A42A2A15E4B000D3B479 /* Sources */,
+				C8F1A42B2A15E4B000D3B479 /* Frameworks */,
+				C8F1A42C2A15E4B000D3B479 /* Resources */,
+				8990D6BD5C93E7DC451F297E /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = OmicallDevSwift;
+			productName = OmicallDevSwift;
+			productReference = C8F1A42E2A15E4B000D3B479 /* OmicallDevSwift.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C8F1A4262A15E4B000D3B479 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1420;
+				LastUpgradeCheck = 1420;
+				TargetAttributes = {
+					C8F1A42D2A15E4B000D3B479 = {
+						CreatedOnToolsVersion = 14.2;
+						LastSwiftMigration = 1420;
+					};
+				};
+			};
+			buildConfigurationList = C8F1A4292A15E4B000D3B479 /* Build configuration list for PBXProject "OmicallDevSwift" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = C8F1A4252A15E4B000D3B479;
+			productRefGroup = C8F1A42F2A15E4B000D3B479 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C8F1A42D2A15E4B000D3B479 /* OmicallDevSwift */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		C8F1A42C2A15E4B000D3B479 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C8F1A43E2A15E4B200D3B479 /* LaunchScreen.storyboard in Resources */,
+				C8F1A43B2A15E4B100D3B479 /* Assets.xcassets in Resources */,
+				C8F1A4392A15E4B000D3B479 /* Main.storyboard in Resources */,
+				C8F1A44A2A160F2B00D3B479 /* HomeViewController.xib in Resources */,
+				C89D1ECE2A1C750B00DFAFEB /* VideoCallViewController.xib in Resources */,
+				C89D1ED62A1C9EBE00DFAFEB /* AudioCallViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		647F57DE618CAA36DD8ADCC6 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-OmicallDevSwift-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8990D6BD5C93E7DC451F297E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-OmicallDevSwift/Pods-OmicallDevSwift-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-OmicallDevSwift/Pods-OmicallDevSwift-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-OmicallDevSwift/Pods-OmicallDevSwift-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C8F1A42A2A15E4B000D3B479 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C8F1A4322A15E4B000D3B479 /* AppDelegate.swift in Sources */,
+				C89D1ED52A1C9EBE00DFAFEB /* AudioCallViewController.swift in Sources */,
+				C8F1A4462A160F0000D3B479 /* AppRouter.swift in Sources */,
+				C89D1ECD2A1C750B00DFAFEB /* VideoCallViewController.swift in Sources */,
+				C8F1A4492A160F2B00D3B479 /* HomeViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		C8F1A4372A15E4B000D3B479 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C8F1A4382A15E4B000D3B479 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		C8F1A43C2A15E4B200D3B479 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C8F1A43D2A15E4B200D3B479 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		C8F1A4402A15E4B200D3B479 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		C8F1A4412A15E4B200D3B479 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		C8F1A4432A15E4B200D3B479 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 77BF2137D9A05D7E22D5896F /* Pods-OmicallDevSwift.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = OmicallDevSwift/OmicallDevSwift.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = ZD8A96Y6GA;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = OmicallDevSwift/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = OMiSwift;
+				INFOPLIST_KEY_NSCameraUsageDescription = "OmiSDKExample camera description.";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Need microphone access for make Call";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIStatusBarStyle = "";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = vn.vihat.omikit;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = Developer_vn.vihat.omikit;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		C8F1A4442A15E4B200D3B479 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 033B817320F838EDDBE4E06E /* Pods-OmicallDevSwift.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = OmicallDevSwift/OmicallDevSwift.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = ZD8A96Y6GA;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = OmicallDevSwift/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = OMiSwift;
+				INFOPLIST_KEY_NSCameraUsageDescription = "OmiSDKExample camera description.";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Need microphone access for make Call";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIStatusBarStyle = "";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = vn.vihat.omikit;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = Developer_vn.vihat.omikit;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C8F1A4292A15E4B000D3B479 /* Build configuration list for PBXProject "OmicallDevSwift" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C8F1A4402A15E4B200D3B479 /* Debug */,
+				C8F1A4412A15E4B200D3B479 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C8F1A4422A15E4B200D3B479 /* Build configuration list for PBXNativeTarget "OmicallDevSwift" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C8F1A4432A15E4B200D3B479 /* Debug */,
+				C8F1A4442A15E4B200D3B479 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = C8F1A4262A15E4B000D3B479 /* Project object */;
+}

@@ -1,0 +1,21 @@
+PODS:
+  - OmiKit (1.5.32)
+
+DEPENDENCIES:
+  - OmiKit (from `https://github.com/VIHATTeam/OmiKit.git`)
+
+EXTERNAL SOURCES:
+  OmiKit:
+    :git: https://github.com/VIHATTeam/OmiKit.git
+
+CHECKOUT OPTIONS:
+  OmiKit:
+    :commit: 48f1de11946aae1d84292abfbd11e88b329b9837
+    :git: https://github.com/VIHATTeam/OmiKit.git
+
+SPEC CHECKSUMS:
+  OmiKit: 2148a2015d446ed8a219d664e44b28bd8d3f36d3
+
+PODFILE CHECKSUM: 78738df5ec68e99c855896e39760ec855ff89b67
+
+COCOAPODS: 1.11.3

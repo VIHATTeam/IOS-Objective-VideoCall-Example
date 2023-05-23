@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="VideoCallViewController" customModule="OmicallDevSwift" customModuleProvider="target">
+            <connections>
+                <outlet property="imgCamera" destination="l02-MT-DhQ" id="2MI-b3-H3j"/>
+                <outlet property="imgHangUp" destination="ixg-F7-3E5" id="b2P-1w-IkV"/>
+                <outlet property="imgMic" destination="YrP-oE-nK6" id="SW2-5d-8nE"/>
+                <outlet property="imgNetwork" destination="IF6-VH-UWP" id="l94-W5-0Gb"/>
+                <outlet property="imgSwitch" destination="xQb-Zf-MsK" id="uuN-xb-ToI"/>
+                <outlet property="localView" destination="OXT-ia-h66" id="dEH-Fk-Dkj"/>
+                <outlet property="remoteView" destination="JJU-el-71s" id="ohZ-1z-sSO"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JJU-el-71s" customClass="OMIVideoPreviewView">
+                    <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OXT-ia-h66" customClass="OMIVideoPreviewView">
+                    <rect key="frame" x="277" y="147" width="100" height="177.66666666666663"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="OXT-ia-h66" secondAttribute="height" multiplier="9/16" id="Aj4-u5-xGu"/>
+                        <constraint firstAttribute="width" constant="100" id="tH5-H6-qEo"/>
+                    </constraints>
+                </view>
+                <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Nhv-PW-qbx">
+                    <rect key="frame" x="32" y="726" width="329" height="60"/>
+                    <subviews>
+                        <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="video" translatesAutoresizingMaskIntoConstraints="NO" id="l02-MT-DhQ">
+                            <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
+                            <constraints>
+                                <constraint firstAttribute="width" secondItem="l02-MT-DhQ" secondAttribute="height" id="6em-4Y-9eZ"/>
+                                <constraint firstAttribute="height" constant="60" id="gZb-UO-LGo"/>
+                            </constraints>
+                        </imageView>
+                        <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mic" translatesAutoresizingMaskIntoConstraints="NO" id="YrP-oE-nK6">
+                            <rect key="frame" x="134.66666666666666" y="0.0" width="60" height="60"/>
+                            <constraints>
+                                <constraint firstAttribute="width" secondItem="YrP-oE-nK6" secondAttribute="height" id="4Ng-T2-r8j"/>
+                            </constraints>
+                        </imageView>
+                        <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="hangup" translatesAutoresizingMaskIntoConstraints="NO" id="ixg-F7-3E5">
+                            <rect key="frame" x="269" y="0.0" width="60" height="60"/>
+                            <constraints>
+                                <constraint firstAttribute="width" secondItem="ixg-F7-3E5" secondAttribute="height" multiplier="1:1" id="vzm-89-HVt"/>
+                            </constraints>
+                        </imageView>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="ixg-F7-3E5" firstAttribute="width" secondItem="YrP-oE-nK6" secondAttribute="width" id="vjz-IW-diY"/>
+                    </constraints>
+                </stackView>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="network_medium" translatesAutoresizingMaskIntoConstraints="NO" id="IF6-VH-UWP">
+                    <rect key="frame" x="184.66666666666666" y="91" width="24" height="24"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="24" id="tnt-Rz-CzM"/>
+                        <constraint firstAttribute="height" constant="24" id="wgA-Dj-Zum"/>
+                    </constraints>
+                </imageView>
+                <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="refresh" translatesAutoresizingMaskIntoConstraints="NO" id="xQb-Zf-MsK">
+                    <rect key="frame" x="311" y="91" width="32" height="32"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="32" id="0i3-NA-EBz"/>
+                        <constraint firstAttribute="width" constant="32" id="yD0-Pc-AUN"/>
+                    </constraints>
+                </imageView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="OXT-ia-h66" firstAttribute="top" secondItem="xQb-Zf-MsK" secondAttribute="bottom" constant="24" id="6N3-0d-WN7"/>
+                <constraint firstItem="IF6-VH-UWP" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="CZC-w5-MpS"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="Nhv-PW-qbx" secondAttribute="bottom" constant="32" id="J6k-fI-Ei7"/>
+                <constraint firstItem="xQb-Zf-MsK" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="32" id="Phd-RL-yjR"/>
+                <constraint firstAttribute="bottom" secondItem="JJU-el-71s" secondAttribute="bottom" id="RaM-LY-CsJ"/>
+                <constraint firstItem="Nhv-PW-qbx" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="32" id="U3S-2h-4FF"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="OXT-ia-h66" secondAttribute="trailing" constant="16" id="Wue-5I-1Wq"/>
+                <constraint firstAttribute="trailing" secondItem="JJU-el-71s" secondAttribute="trailing" id="fQU-Mp-hjz"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Nhv-PW-qbx" secondAttribute="trailing" constant="32" id="iCB-MX-0Zj"/>
+                <constraint firstItem="JJU-el-71s" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="klc-M6-Bmf"/>
+                <constraint firstItem="IF6-VH-UWP" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="32" id="neb-wd-AFf"/>
+                <constraint firstItem="xQb-Zf-MsK" firstAttribute="centerX" secondItem="OXT-ia-h66" secondAttribute="centerX" id="uMu-76-rFL"/>
+                <constraint firstItem="JJU-el-71s" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="vRq-xq-I6I"/>
+            </constraints>
+            <point key="canvasLocation" x="138" y="20"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="hangup" width="140" height="140"/>
+        <image name="mic" width="140" height="140"/>
+        <image name="network_medium" width="44" height="48"/>
+        <image name="refresh" width="120" height="120"/>
+        <image name="video" width="140" height="140"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
