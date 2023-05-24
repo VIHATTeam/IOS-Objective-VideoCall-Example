@@ -53,11 +53,11 @@ struct HomeView : View {
               )
             HStack(alignment: .center, spacing: 24) {
                 Button("Login User 1") {
-                    OmiClient.initWithUsername(USER_NAME1, password: PASS_WORD1, realm: "thaonguyennguyen1197")
+                    OmiClient.initWithUsername(USER_NAME1, password: PASS_WORD1, realm: "")
                     sip = USER_NAME2
                 }.frame(maxWidth: .infinity)
                 Button("Login User 2") {
-                    OmiClient.initWithUsername(USER_NAME2, password: PASS_WORD2, realm: "thaonguyennguyen1197")
+                    OmiClient.initWithUsername(USER_NAME2, password: PASS_WORD2, realm: "")
                     sip = USER_NAME1
                 }.frame(maxWidth: .infinity)
             }.frame(

@@ -40,12 +40,12 @@ class HomeViewController: UIViewController {
     }
     
     @IBAction func loginWithUser1(_ sender: Any) {
-        OmiClient.initWithUsername(USER_NAME1, password: PASS_WORD1, realm: "thaonguyennguyen1197")
+        OmiClient.initWithUsername(USER_NAME1, password: PASS_WORD1, realm: "")
         tfSipUuid.text = USER_NAME2
     }
     
     @IBAction func loginWithUser2(_ sender: Any) {
-        OmiClient.initWithUsername(USER_NAME2, password: PASS_WORD2, realm: "thaonguyennguyen1197")
+        OmiClient.initWithUsername(USER_NAME2, password: PASS_WORD2, realm: "")
         tfSipUuid.text = USER_NAME1
     }
     
