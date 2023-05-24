@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C88EAF302A1DACCF00F6CCC1 /* NetworkImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C88EAF2F2A1DACCF00F6CCC1 /* NetworkImageView.swift */; };
 		C89D1EE42A1CB3EC00DFAFEB /* OmiSwiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C89D1EE32A1CB3EC00DFAFEB /* OmiSwiftUIApp.swift */; };
 		C89D1EE82A1CB3EE00DFAFEB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C89D1EE72A1CB3EE00DFAFEB /* Assets.xcassets */; };
 		C89D1EEB2A1CB3EE00DFAFEB /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C89D1EEA2A1CB3EE00DFAFEB /* Preview Assets.xcassets */; };
@@ -21,6 +22,7 @@
 		05E7B52551FA67C065537782 /* Pods-OmiSwiftUI.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OmiSwiftUI.release.xcconfig"; path = "Target Support Files/Pods-OmiSwiftUI/Pods-OmiSwiftUI.release.xcconfig"; sourceTree = "<group>"; };
 		89A693EE3B9050AA23D4819F /* Pods_OmiSwiftUI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OmiSwiftUI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF71E403ECD0884C62569BAC /* Pods-OmiSwiftUI.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OmiSwiftUI.debug.xcconfig"; path = "Target Support Files/Pods-OmiSwiftUI/Pods-OmiSwiftUI.debug.xcconfig"; sourceTree = "<group>"; };
+		C88EAF2F2A1DACCF00F6CCC1 /* NetworkImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkImageView.swift; sourceTree = "<group>"; };
 		C89D1EE02A1CB3EC00DFAFEB /* OmiSwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OmiSwiftUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C89D1EE32A1CB3EC00DFAFEB /* OmiSwiftUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OmiSwiftUIApp.swift; sourceTree = "<group>"; };
 		C89D1EE72A1CB3EE00DFAFEB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -54,6 +56,14 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		C88EAF2E2A1DACC000F6CCC1 /* CustomView */ = {
+			isa = PBXGroup;
+			children = (
+				C88EAF2F2A1DACCF00F6CCC1 /* NetworkImageView.swift */,
+			);
+			path = CustomView;
+			sourceTree = "<group>";
+		};
 		C89D1ED72A1CB3EC00DFAFEB = {
 			isa = PBXGroup;
 			children = (
@@ -75,6 +85,7 @@
 		C89D1EE22A1CB3EC00DFAFEB /* OmiSwiftUI */ = {
 			isa = PBXGroup;
 			children = (
+				C88EAF2E2A1DACC000F6CCC1 /* CustomView */,
 				C89D1EF22A1CC78300DFAFEB /* OmiSwiftUI.entitlements */,
 				C89D1EF12A1CC77F00DFAFEB /* Info.plist */,
 				C89D1EE32A1CB3EC00DFAFEB /* OmiSwiftUIApp.swift */,
@@ -219,6 +230,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C89D1EFA2A1CCE1E00DFAFEB /* CustomViewDidLoad.swift in Sources */,
+				C88EAF302A1DACCF00F6CCC1 /* NetworkImageView.swift in Sources */,
 				C89D1EF82A1CCC7200DFAFEB /* VideoCallView.swift in Sources */,
 				C89D1EF62A1CCC6900DFAFEB /* AudioCallView.swift in Sources */,
 				C89D1EF42A1CC7FC00DFAFEB /* HomeView.swift in Sources */,

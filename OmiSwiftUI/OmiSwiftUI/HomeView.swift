@@ -30,10 +30,12 @@ struct HomeView : View {
                 .padding(8)
             HStack(alignment: .center, spacing: 24) {
                 Button("Audio Call") {
-                    
+                    OmiClient.startCall(sip)
+                    showAudioCall = true
                 }.frame(maxWidth: .infinity)
                 Button("Video Call") {
-                    
+                    OmiClient.startVideoCall(sip)
+                    showVideoCall = true
                 }.frame(maxWidth: .infinity)
             }.frame(
                 maxWidth: .infinity,
