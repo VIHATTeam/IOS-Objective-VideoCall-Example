@@ -16,6 +16,8 @@ struct AudioCallView: View {
     @State var userImage = ""
     @State var muted = false
     @State var isSpeaker = false
+    @State var currentTime = 0
+    let timer = Timer.publish(every: 1, on: .main, in: .common)
     
     private func incomingNumber() -> String {
         if let call = OMISIPLib.sharedInstance().getNewestCall() {
@@ -29,7 +31,11 @@ struct AudioCallView: View {
             VStack(alignment: .center) {
                 CustomImageView(urlString: userImage, placeHolder: "avt", width: 100, height: 100, borderRadius: 50)
                 Spacer().frame(height: 24)
-                Text("Cuộc gọi tới từ \(incomingNumber())")
+                Text("Cuộc gọi tới từ \(incomingNumber())").font(.title)
+                if (establishedCall) {
+                    Spacer().frame(height: 24)
+                    Text(currentTime.toHour()).font(.headline)
+                }
                 Spacer()
                 HStack(spacing: 32) {
                     if (establishedCall) {
@@ -91,6 +97,9 @@ struct AudioCallView: View {
             maxHeight: .infinity,
             alignment: .center
         ).padding(16)
+        .onReceive(timer, perform: { _ in
+            currentTime += 1
+        })
         .onViewDidLoad {
             NotificationCenter.default.addObserver(forName: NSNotification.Name.OMICallStateChanged, object: nil, queue: .main, using: self.callStateChanged)
             NotificationCenter.default.addObserver(forName: NSNotification.Name.OMICallDealloc, object: nil, queue: .main, using: self.callDealloc)
@@ -119,6 +128,7 @@ struct AudioCallView: View {
                 switch (call.callState) {
                 case .confirmed:
                     self.establishedCall = true
+                    timer.connect()
                     break
                 case .disconnected:
                     self.presentationMode.wrappedValue.dismiss()

@@ -43,11 +43,11 @@ struct HomeView : View {
               )
             HStack(alignment: .center, spacing: 24) {
                 Button("Login User 1") {
-                    OmiClient.initWithUsername(USER_NAME1, password: PASS_WORD1, realm: "")
+                    OmiClient.initWithUsername(USER_NAME1, password: PASS_WORD1, realm: "thaonguyennguyen1197")
                     sip = USER_NAME2
                 }.frame(maxWidth: .infinity)
                 Button("Login User 2") {
-                    OmiClient.initWithUsername(USER_NAME2, password: PASS_WORD2, realm: "")
+                    OmiClient.initWithUsername(USER_NAME2, password: PASS_WORD2, realm: "thaonguyennguyen1197")
                     sip = USER_NAME1
                 }.frame(maxWidth: .infinity)
             }.frame(
@@ -88,5 +88,22 @@ struct HomeView_Previews: PreviewProvider {
         HomeView()
             .previewDevice(PreviewDevice(rawValue: "iPhone 14"))
             .previewDisplayName("iPhone 14")
+    }
+}
+
+
+extension Int {
+    func toHour() -> String {
+        let second = self % 60
+        let minute = self / 60
+        var secondString = "\(second)"
+        var minuteString = "\(minute)"
+        if (second < 10) {
+            secondString = "0\(second)"
+        }
+        if (minute < 10) {
+            minuteString = "0\(minute)"
+        }
+        return "\(minuteString):\(secondString)"
     }
 }
