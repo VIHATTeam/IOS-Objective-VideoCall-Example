@@ -9,7 +9,8 @@ import SwiftUI
 import OmiKit
 
 struct AudioCallView: View {
-    
+        
+    @Binding var phone: String
     @Environment(\.presentationMode) var presentationMode
     @State var establishedCall = false
     @State var networkImage = "network_best"
@@ -19,19 +20,12 @@ struct AudioCallView: View {
     @State var currentTime = 0
     let timer = Timer.publish(every: 1, on: .main, in: .common)
     
-    private func incomingNumber() -> String {
-        if let call = OMISIPLib.sharedInstance().getNewestCall() {
-            return call.callerNumber ?? ""
-        }
-        return ""
-    }
-    
     var body: some View {
         ZStack {
             VStack(alignment: .center) {
                 CustomImageView(urlString: userImage, placeHolder: "avt", width: 100, height: 100, borderRadius: 50)
                 Spacer().frame(height: 24)
-                Text("Cuộc gọi tới từ \(incomingNumber())").font(.title)
+                Text("Cuộc gọi tới từ \(phone)").font(.title)
                 if (establishedCall) {
                     Spacer().frame(height: 24)
                     Text(currentTime.toHour()).font(.headline)
@@ -104,21 +98,14 @@ struct AudioCallView: View {
             NotificationCenter.default.addObserver(forName: NSNotification.Name.OMICallStateChanged, object: nil, queue: .main, using: self.callStateChanged)
             NotificationCenter.default.addObserver(forName: NSNotification.Name.OMICallDealloc, object: nil, queue: .main, using: self.callDealloc)
             NotificationCenter.default.addObserver(forName: NSNotification.Name.OMICallNetworkQuality, object: nil, queue: .main, using: self.updateNetworkHealth)
-        }.onDisappear {
-            NotificationCenter.default.removeObserver(self, name: NSNotification.Name.OMICallDealloc, object: nil)
-            NotificationCenter.default.removeObserver(self, name: NSNotification.Name.OMICallNetworkQuality, object: nil)
-        }.onAppear {
             getUserInfo()
         }
     }
     
     private func getUserInfo() {
-        let fromPhone = incomingNumber()
-        if fromPhone.isEmpty == false {
-            if let user = OmiClient.getAccountInfo(fromPhone) as? [String: Any], let avatar = user["avatar_url"] as? String {
+        if let user = OmiClient.getAccountInfo(phone) as? [String: Any], let avatar = user["avatar_url"] as? String {
 //                userImage = avatar
-                userImage = "https://imglarger.com/Images/before-after/ai-image-enlarger-1-after-2.jpg"
-            }
+            userImage = "https://imglarger.com/Images/before-after/ai-image-enlarger-1-after-2.jpg"
         }
     }
     
@@ -167,7 +154,8 @@ struct AudioCallView: View {
 }
 
 struct AudioCallView_Previews: PreviewProvider {
+    @State static var phone = "110"
     static var previews: some View {
-        AudioCallView()
+        AudioCallView(phone: $phone)
     }
 }

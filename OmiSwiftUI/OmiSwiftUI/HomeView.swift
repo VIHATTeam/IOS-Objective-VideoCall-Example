@@ -8,6 +8,14 @@
 import SwiftUI
 import OmiKit
 
+enum ActiveSheet: Identifiable {
+    case audio, video
+    
+    var id: Int {
+        hashValue
+    }
+}
+
 struct HomeView : View {
     
     let USER_NAME1 = "110"
@@ -16,8 +24,8 @@ struct HomeView : View {
     let PASS_WORD2 = "VlAkzpm2Fn"
 
     @State private var sip: String = ""
-    @State private var showAudioCall = false
-    @State private var showVideoCall = false
+    @State var activeSheet: ActiveSheet?
+    @State private var phone = ""
     
     var body: some View {
         VStack {
@@ -31,11 +39,13 @@ struct HomeView : View {
             HStack(alignment: .center, spacing: 24) {
                 Button("Audio Call") {
                     OmiClient.startCall(sip)
-                    showAudioCall = true
+                    phone = sip
+                    activeSheet = .audio
                 }.frame(maxWidth: .infinity)
                 Button("Video Call") {
                     OmiClient.startVideoCall(sip)
-                    showVideoCall = true
+                    phone = sip
+                    activeSheet = .video
                 }.frame(maxWidth: .infinity)
             }.frame(
                 maxWidth: .infinity,
@@ -54,12 +64,15 @@ struct HomeView : View {
                 maxWidth: .infinity,
                 maxHeight: 60
               )
-        }.onViewDidLoad {
+        }.onAppear {
             NotificationCenter.default.addObserver(forName: NSNotification.Name.OMICallStateChanged, object: nil, queue: .main, using: self.callStateChanged)
-        }.sheet(isPresented: $showAudioCall) {
-            AudioCallView()
-        }.sheet(isPresented: $showVideoCall) {
-            VideoCallView()
+        }.fullScreenCover(item: $activeSheet) { item in
+            switch item {
+            case .audio:
+                AudioCallView(phone: $phone)
+            case .video:
+                VideoCallView(phone: $phone)
+            }
         }
     }
     
@@ -68,11 +81,15 @@ struct HomeView : View {
             if let call = notification.userInfo?[OMINotificationUserInfoCallKey] as? OMICall {
                 switch (call.callState) {
                 case .incoming:
+                    phone = call.callerNumber ?? ""
                     if (call.isVideo) {
-                        showVideoCall = true
+                        activeSheet = .video
                     } else {
-                        showAudioCall = true
+                        activeSheet = .audio
                     }
+                    print("phoneee \(call.callerNumber ?? "")")
+                    print("phoneee \(phone)")
+                    
                     break
                 default:
                     break

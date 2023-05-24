@@ -34,7 +34,7 @@ class VideoCallViewController: UIViewController {
         AVCaptureDevice.requestAccess(for: .video) { _ in
             
         }
-        videoManager = OMIVideoViewManager.init()
+        videoManager = OMIVideoViewManager()
     }
     
     private func setUpNotification() {
