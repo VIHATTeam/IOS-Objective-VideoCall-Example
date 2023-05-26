@@ -1,13 +1,13 @@
 PODS:
   - IQKeyboardManagerSwift (6.5.11)
-  - OmiKit (1.5.35)
+  - OmiKit (1.5.40)
   - SDWebImage (5.15.8):
     - SDWebImage/Core (= 5.15.8)
   - SDWebImage/Core (5.15.8)
 
 DEPENDENCIES:
   - IQKeyboardManagerSwift
-  - OmiKit (~> 1.5.35)
+  - OmiKit (~> 1.5.40)
   - SDWebImage (~> 5.0)
 
 SPEC REPOS:
@@ -18,9 +18,9 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   IQKeyboardManagerSwift: c7955c0bdbf7b2eb29bb7daaa44e3d90f55a9a85
-  OmiKit: 077a2a76da27fb287d495836578b228a19af4987
+  OmiKit: 62c03db513f0face6aeea63d2c30c4209db01c36
   SDWebImage: cb032eba469c54e0000e78bcb0a13cdde0a52798
 
-PODFILE CHECKSUM: 031ca4d991133331b1f27f6c948db68b20217edf
+PODFILE CHECKSUM: e6314abb52ce71ab592abc9e7f5a10308d9344a7
 
 COCOAPODS: 1.11.3

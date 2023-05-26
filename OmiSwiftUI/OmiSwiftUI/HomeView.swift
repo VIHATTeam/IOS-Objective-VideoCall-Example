@@ -18,10 +18,10 @@ enum ActiveSheet: Identifiable {
 
 struct HomeView : View {
     
-    let USER_NAME1 = "110"
-    let PASS_WORD1 = "JuFp30uvwF"
-    let USER_NAME2 = "115"
-    let PASS_WORD2 = "VlAkzpm2Fn"
+    let USER_NAME1 = "102"
+    let PASS_WORD1 = "AwiZHdm2SY"
+    let USER_NAME2 = "103"
+    let PASS_WORD2 = "a7JoGYJbJQ"
 
     @State private var sip: String = ""
     @State var activeSheet: ActiveSheet?

@@ -118,6 +118,8 @@ struct AudioCallView: View {
                     timer.connect()
                     break
                 case .disconnected:
+                    let endCause = call.lastStatus
+                    print(endCause)
                     self.presentationMode.wrappedValue.dismiss()
                     break
                 default:
@@ -128,6 +130,9 @@ struct AudioCallView: View {
     }
     
     func callDealloc(_ notification: Notification) {
+        if let userInfo = notification.userInfo as? [String: Any], let endCause = userInfo[OMINotificationEndCauseKey] as? Int {
+            print(endCause)
+        }
         DispatchQueue.main.async {
             self.presentationMode.wrappedValue.dismiss()
         }
@@ -135,6 +140,8 @@ struct AudioCallView: View {
     
     func updateNetworkHealth(_ notification: Notification) {
         let userInfo = notification.userInfo
+        print(userInfo)
+        //MOS,PPL,latency
         if let state = userInfo?[OMINotificationNetworkStatusKey] as? Int {
             switch (state) {
             case 0:
