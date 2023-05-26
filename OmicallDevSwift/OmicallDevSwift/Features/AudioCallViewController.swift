@@ -53,7 +53,7 @@ class AudioCallViewController: UIViewController {
     }
     
     private func getUserInfor() {
-        guard let call = OMISIPLib.sharedInstance().getNewestCall() as? OMICall else {
+        guard let call = OMISIPLib.sharedInstance().getNewestCall() else {
             return
         }
         let number = call.callerNumber
@@ -83,6 +83,8 @@ class AudioCallViewController: UIViewController {
                 }
             }
             if call.callState == .disconnected {
+                let endCause = call.lastStatus
+                print(endCause)
                 DispatchQueue.main.async {[weak self] in
                     guard let self = self else { return }
                     self.dismiss(animated: true)
@@ -93,6 +95,9 @@ class AudioCallViewController: UIViewController {
     }
     
     @objc func callDealloc(notification: NSNotification) {
+        if let userInfo = notification.userInfo as? [String: Any], let endCause = userInfo[OMINotificationEndCauseKey] as? Int {
+            print(endCause)
+        }
         DispatchQueue.main.async {[weak self] in
             guard let self = self else { return }
             self.dismiss(animated: true)
@@ -101,6 +106,8 @@ class AudioCallViewController: UIViewController {
     
     @objc func updateNetworkHealth(notification: NSNotification) {
         let userInfo = notification.userInfo
+        print(userInfo)
+        //MOS,PPL,latency
         if let state = userInfo?[OMINotificationNetworkStatusKey] as? Int {
             switch (state) {
             case 0:
