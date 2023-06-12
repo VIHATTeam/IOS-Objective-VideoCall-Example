@@ -21,7 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var deviceOrientation = UIInterfaceOrientationMask.portrait
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        OmiClient.setEnviroment(KEY_OMI_APP_ENVIROMENT_SANDBOX)
+        OmiClient.setEnviroment(KEY_OMI_APP_ENVIROMENT_SANDBOX, prefix: "", userNameKey: "extension", maxCall: 1)
         provider = CallKitProviderDelegate.init(callManager: OMISIPLib.sharedInstance().callManager)
         voipRegistry = PKPushRegistry.init(queue: .main)
         pushkitManager = PushKitManager.init(voipRegistry: voipRegistry)
@@ -57,6 +57,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             UIApplication.shared.registerUserNotificationSettings(UIUserNotificationSettings(types: [.sound, .alert, .badge], categories: nil))
             UIApplication.shared.registerForRemoteNotifications()
         }
+    }
+    
+    func application(_ application: UIApplication, continue userActivity: NSUserActivity, restorationHandler: @escaping ([UIUserActivityRestoring]?) -> Void) -> Bool {
+        return true
     }
 }
 

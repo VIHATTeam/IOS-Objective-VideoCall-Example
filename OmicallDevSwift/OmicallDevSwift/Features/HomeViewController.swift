@@ -18,23 +18,25 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var tfSipUuid: UITextField!
     
     @IBAction func audioCall(_ sender: Any) {
-        let result = OmiClient.startCall(tfSipUuid.text ?? "")
-        if result {
-            DispatchQueue.main.async {
-                let vc = AudioCallViewController()
-                vc.modalPresentationStyle = .fullScreen
-                self.present(vc, animated: true)
+        OmiClient.startCall(tfSipUuid.text ?? "", isVideo: false) { status in
+            if (status == .startCallSuccess) {
+                DispatchQueue.main.async {
+                    let vc = AudioCallViewController()
+                    vc.modalPresentationStyle = .fullScreen
+                    self.present(vc, animated: true)
+                }
             }
         }
     }
     
     @IBAction func videoCall(_ sender: Any) {
-        let result = OmiClient.startVideoCall(tfSipUuid.text ?? "")
-        if result {
-            DispatchQueue.main.async {
-                let vc = VideoCallViewController()
-                vc.modalPresentationStyle = .fullScreen
-                self.present(vc, animated: true)
+        OmiClient.startCall(tfSipUuid.text ?? "", isVideo: true) { status in
+            if (status == .startCallSuccess) {
+                DispatchQueue.main.async {
+                    let vc = VideoCallViewController()
+                    vc.modalPresentationStyle = .fullScreen
+                    self.present(vc, animated: true)
+                }
             }
         }
     }

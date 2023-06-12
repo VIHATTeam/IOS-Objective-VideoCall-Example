@@ -20,7 +20,7 @@ struct HomeView : View {
     
     let USER_NAME1 = "102"
     let PASS_WORD1 = "AwiZHdm2SY"
-    let USER_NAME2 = "103"
+    let USER_NAME2 = "102"
     let PASS_WORD2 = "a7JoGYJbJQ"
 
     @State private var sip: String = ""
@@ -38,14 +38,20 @@ struct HomeView : View {
                 .padding(8)
             HStack(alignment: .center, spacing: 24) {
                 Button("Audio Call") {
-                    OmiClient.startCall(sip)
+                    OmiClient.startCall(sip, isVideo: false) { status in
+                        if (status == OMIStartCallStatus.startCallSuccess) {
+                            activeSheet = .audio
+                        }
+                    }
                     phone = sip
-                    activeSheet = .audio
                 }.frame(maxWidth: .infinity)
                 Button("Video Call") {
-                    OmiClient.startVideoCall(sip)
+                    OmiClient.startCall(sip, isVideo: true) { status in
+                        if (status == OMIStartCallStatus.startCallSuccess) {
+                            activeSheet = .video
+                        }
+                    }
                     phone = sip
-                    activeSheet = .video
                 }.frame(maxWidth: .infinity)
             }.frame(
                 maxWidth: .infinity,
@@ -66,6 +72,7 @@ struct HomeView : View {
               )
         }.onAppear {
             NotificationCenter.default.addObserver(forName: NSNotification.Name.OMICallStateChanged, object: nil, queue: .main, using: self.callStateChanged)
+            NotificationCenter.default.addObserver(forName: NSNotification.Name.OMICallDealloc, object: nil, queue: .main, using: self.callDealloc)
         }.fullScreenCover(item: $activeSheet) { item in
             switch item {
             case .audio:
@@ -91,11 +98,21 @@ struct HomeView : View {
                     print("phoneee \(phone)")
                     
                     break
+                case .early:
+                    print("CallDealloc eary: \(Date())")
+                case .disconnected:
+                    print("CallDealloc disconnected: \(Date())")
                 default:
                     break
                 }
             }
         }
+    }
+    
+    func callDealloc(_ notification: Notification) {
+        let data = notification.userInfo
+        print("CallDealloc \(data)")
+        print("CallDealloc have event: \(Date())")
     }
 }
 

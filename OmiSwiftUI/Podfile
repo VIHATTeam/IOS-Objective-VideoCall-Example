@@ -3,11 +3,10 @@
 
 target 'OmiSwiftUI' do
   # Comment the next line if you don't want to use dynamic frameworks
-  pod 'OmiKit', '~>1.5.40'
+  pod 'OmiKit', '~>1.5.52'
   pod 'IQKeyboardManagerSwift'
   pod 'SDWebImage', '~> 5.0'
   use_frameworks!
 
   # Pods for OmiSwiftUI
-
 end

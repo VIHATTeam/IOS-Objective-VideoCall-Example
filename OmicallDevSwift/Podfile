@@ -3,7 +3,7 @@
 
 target 'OmicallDevSwift' do
   # Comment the next line if you don't want to use dynamic frameworks
-  pod 'OmiKit', '~>1.5.40'
+  pod 'OmiKit', '~>1.5.49'
   pod 'IQKeyboardManagerSwift'
   pod 'SDWebImage', '~> 5.0'
   use_frameworks!

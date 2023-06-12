@@ -14,7 +14,7 @@ class AppDelegate: NSObject, UIApplicationDelegate {
     var provider: CallKitProviderDelegate?
     var voipRegistry: PKPushRegistry?
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
-        OmiClient.setEnviroment(KEY_OMI_APP_ENVIROMENT_SANDBOX)
+        OmiClient.setEnviroment(KEY_OMI_APP_ENVIROMENT_SANDBOX, userNameKey: "extension", maxCall: 1)
         provider = CallKitProviderDelegate.init(callManager: OMISIPLib.sharedInstance().callManager)
         voipRegistry = PKPushRegistry.init(queue: .main)
         pushkitManager = PushKitManager.init(voipRegistry: voipRegistry)
