@@ -57,7 +57,7 @@ class AudioCallViewController: UIViewController {
             return
         }
         let number = call.callerNumber
-        lblTitle.text = "Cuộc gọi tới từ: \(number!)"
+        lblTitle.text = "Cuộc gọi tới từ: \(number ?? "")"
         if let user = OmiClient.getAccountInfo(number ?? "") as? [String: Any], let avatar = user["avatar_url"] as? String {
             imgAvatar.sd_setImage(with: URL(string: "https://imglarger.com/Images/before-after/ai-image-enlarger-1-after-2.jpg")!)
             if (avatar.isEmpty == false) {
